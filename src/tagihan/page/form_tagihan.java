@@ -5,6 +5,10 @@
  */
 package tagihan.page;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ROG
@@ -27,87 +31,87 @@ public class form_tagihan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        tgl = new com.toedter.calendar.JDateChooser();
+        combo_idpeng = new javax.swing.JComboBox<>();
+        combo_status = new javax.swing.JComboBox<>();
+        combo_periode = new javax.swing.JComboBox<>();
+        lbl_tagihan = new javax.swing.JTextField();
+        lbl_kamar = new javax.swing.JTextField();
+        lbl_id = new javax.swing.JTextField();
+        btn_batal = new javax.swing.JLabel();
+        btn_simpan = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jDateChooser1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        getContentPane().add(jDateChooser1);
-        jDateChooser1.setBounds(1108, 479, 370, 40);
+        tgl.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(tgl);
+        tgl.setBounds(1108, 479, 370, 40);
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        combo_idpeng.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        combo_idpeng.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih--" }));
+        combo_idpeng.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                combo_idpengActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(1108, 310, 130, 40);
+        getContentPane().add(combo_idpeng);
+        combo_idpeng.setBounds(1108, 310, 130, 40);
 
-        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunas\t", "Belum Lunas" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        combo_status.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        combo_status.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lunas\t", "Belum Lunas" }));
+        combo_status.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                combo_statusActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox2);
-        jComboBox2.setBounds(547, 830, 180, 40);
+        getContentPane().add(combo_status);
+        combo_status.setBounds(547, 830, 180, 40);
 
-        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bulan ", "2 Bulan", "3 Bulan ", "4 Bulan ", "5 Bulan ", "6 Bulan ", "1 Tahun" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        combo_periode.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        combo_periode.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 Bulan ", "2 Bulan", "3 Bulan ", "4 Bulan ", "5 Bulan ", "6 Bulan ", "1 Tahun" }));
+        combo_periode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                combo_periodeActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox3);
-        jComboBox3.setBounds(547, 650, 140, 40);
+        getContentPane().add(combo_periode);
+        combo_periode.setBounds(547, 650, 140, 40);
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField3.setBorder(null);
-        jTextField3.setOpaque(false);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(1108, 665, 370, 26);
+        lbl_tagihan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbl_tagihan.setBorder(null);
+        lbl_tagihan.setOpaque(false);
+        getContentPane().add(lbl_tagihan);
+        lbl_tagihan.setBounds(1108, 665, 370, 26);
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setBorder(null);
-        jTextField1.setOpaque(false);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(547, 493, 370, 26);
+        lbl_kamar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbl_kamar.setBorder(null);
+        lbl_kamar.setOpaque(false);
+        getContentPane().add(lbl_kamar);
+        lbl_kamar.setBounds(547, 493, 370, 26);
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField2.setBorder(null);
-        jTextField2.setOpaque(false);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(547, 320, 370, 26);
+        lbl_id.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lbl_id.setBorder(null);
+        lbl_id.setOpaque(false);
+        getContentPane().add(lbl_id);
+        lbl_id.setBounds(547, 320, 370, 26);
 
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_batal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                btn_batalMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(1060, 940, 190, 60);
+        getContentPane().add(btn_batal);
+        btn_batal.setBounds(1060, 940, 190, 60);
 
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_simpan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                btn_simpanMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(1290, 940, 180, 60);
+        getContentPane().add(btn_simpan);
+        btn_simpan.setBounds(1290, 940, 180, 60);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Tagihan.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -117,25 +121,47 @@ public class form_tagihan extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void combo_idpengActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_idpengActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_combo_idpengActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void combo_statusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_statusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_combo_statusActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void combo_periodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_periodeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_combo_periodeActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void btn_batalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_batalMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_btn_batalMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+    private void btn_simpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_simpanMouseClicked
+       
+//        this.setVisible(true);
+//       new pop_up_berhasil().setVisible(true);
+        
+        try{
+        String sql = "INSERT INTO simko(tb_tagihan) VALUES('"+lbl_id.getText()+"','"
+                +lbl_kamar.getText()+"','"
+                +tgl.getDate()+"','"+"','"
+                +lbl_tagihan.getText()+"')";
+        
+       java.sql.Connection conn = (Connection)config.configDB();
+       java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+       pst.execute();
+       
+//       JOptionPane.showMessageDialog(null, "Register Data Berhasil");
+       this.setVisible(true);
+       new pop_up_berhasil().setVisible(true);
+                
+        
+        } catch (Exception e){
+        this.setVisible(true);
+        new pop_up_gagal().setVisible(true);
+        }
+    }//GEN-LAST:event_btn_simpanMouseClicked
 
     /**
      * @param args the command line arguments
@@ -173,15 +199,15 @@ public class form_tagihan extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JLabel btn_batal;
+    private javax.swing.JLabel btn_simpan;
+    private javax.swing.JComboBox<String> combo_idpeng;
+    private javax.swing.JComboBox<String> combo_periode;
+    private javax.swing.JComboBox<String> combo_status;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField lbl_id;
+    private javax.swing.JTextField lbl_kamar;
+    private javax.swing.JTextField lbl_tagihan;
+    private com.toedter.calendar.JDateChooser tgl;
     // End of variables declaration//GEN-END:variables
 }
