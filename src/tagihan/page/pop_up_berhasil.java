@@ -27,33 +27,47 @@ public class pop_up_berhasil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         btn_oke = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        close_btn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
-        btn_oke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pop up 4.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/simpan.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 261);
+
+        btn_oke.setText("jLabel2");
         btn_oke.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_okeMouseClicked(evt);
             }
         });
         getContentPane().add(btn_oke);
-        btn_oke.setBounds(0, 0, 810, 430);
+        btn_oke.setBounds(186, 175, 110, 30);
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(300, 280, 190, 60);
+        close_btn.setText("jLabel2");
+        close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                close_btnMouseClicked(evt);
+            }
+        });
+        getContentPane().add(close_btn);
+        close_btn.setBounds(445, 14, 27, 27);
 
-        setSize(new java.awt.Dimension(818, 474));
+        setSize(new java.awt.Dimension(490, 259));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_okeMouseClicked
-        this.setVisible(false);
-        new form_tagihan().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btn_okeMouseClicked
+
+    private void close_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_close_btnMouseClicked
+        dispose();
+    }//GEN-LAST:event_close_btnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -92,6 +106,7 @@ public class pop_up_berhasil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btn_oke;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel close_btn;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

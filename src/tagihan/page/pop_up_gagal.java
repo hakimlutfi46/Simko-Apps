@@ -27,33 +27,47 @@ public class pop_up_gagal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btn_oke = new javax.swing.JLabel();
+        close_btn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pop up 3.png"))); // NOI18N
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/error.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 490, 260);
+
+        btn_oke.setText("jLabel1");
+        btn_oke.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                btn_okeMouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 800, 420);
+        getContentPane().add(btn_oke);
+        btn_oke.setBounds(185, 176, 110, 30);
 
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(300, 280, 190, 60);
+        close_btn.setText("jLabel1");
+        close_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                close_btnMouseClicked(evt);
+            }
+        });
+        getContentPane().add(close_btn);
+        close_btn.setBounds(446, 15, 25, 25);
 
-        setSize(new java.awt.Dimension(819, 466));
+        setSize(new java.awt.Dimension(490, 259));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        this.setVisible(false);
-        new form_tagihan().setAlwaysOnTop(true);
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void btn_okeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_okeMouseClicked
+        dispose();
+    }//GEN-LAST:event_btn_okeMouseClicked
+
+    private void close_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_close_btnMouseClicked
+        dispose();
+    }//GEN-LAST:event_close_btnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -91,7 +105,8 @@ public class pop_up_gagal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel btn_oke;
+    private javax.swing.JLabel close_btn;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
